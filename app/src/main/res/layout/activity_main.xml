@@ -12,17 +12,31 @@
     <EditText
         android:hint="username"
         android:id="@+id/txtusername"
+        android:layout_marginTop="150dp"
+        android:layout_marginHorizontal="10dp"
+        android:paddingLeft="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"/>
     <EditText
         android:hint="password"
         android:id="@+id/txtpassword"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="3dp"
+        android:paddingLeft="10dp"
         android:inputType="textPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"/>
     <Button
         android:id="@+id/btnlogin"
         android:text="login"
+        android:clickable="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="120dp"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
