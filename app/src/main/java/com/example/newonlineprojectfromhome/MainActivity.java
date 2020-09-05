@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
     EditText username;
     EditText password;
     Button login;
-    String usertext;
-    String passtext;
-    String useradmin = "admin";
-    String passadmin = "admin";
+    String userText;
+    String passText;
+    String userAdmin = "admin";
+    String passAdmin = "admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
                if (username.getText().toString().length()==0 || password.getText().toString().length()==0){
                    Toast.makeText(MainActivity.this, "Please enter your Username and Password...", Toast.LENGTH_SHORT).show();
                }else {
-                   usertext = username.getText().toString();
-                   passtext = password.getText().toString();
+                   userText = username.getText().toString();
+                   passText = password.getText().toString();
                    if (username.getText().toString().length()!=0 && password.getText().toString().length()!=0){
-                       Intent intent  = new Intent(MainActivity.this,MainMenu.class);
+                       Intent intent  = new Intent(MainActivity.this, CostumerDasboard.class);
                        startActivity(intent);
                        finish();
                    }
-                   else if (usertext.equals(useradmin)&& passtext.equals(passadmin)){
-                       Intent intent = new Intent(MainActivity.this,MainMenu.class);
+                   else if (userText.equals(userAdmin)&& passText.equals(passAdmin)){
+                       Intent intent = new Intent(MainActivity.this, AdminDashboard.class);
                        startActivity(intent);
                        finish();
                    }else {
