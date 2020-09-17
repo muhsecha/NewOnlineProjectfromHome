@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button login;
     SharedPreferences sp;
     ProgressDialog progressDialog;
+    TextView regis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +41,20 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.etEmail);
         pass = findViewById(R.id.etPassword);
         login = findViewById(R.id.btnLogin);
+        regis = findViewById(R.id.tvregistrasi);
 
         sp = getSharedPreferences("login",MODE_PRIVATE);
+        sp.edit().putString("logged", sp.getString("logged", "missing")).apply();
 
-        if(sp.getBoolean("logged",true)){
+        String admin = sp.getString("logged", "missing");
+        String customer = sp.getString("logged", "missing");
+
+        if(customer.equals("customer")){
             Intent intent = new Intent(MainActivity.this, CostumerDasboard.class);
+            startActivity(intent);
+            finish();
+        }else if (admin.equals("admin")){
+            Intent intent = new Intent(MainActivity.this, AdminDashboard.class);
             startActivity(intent);
             finish();
         }
@@ -95,6 +106,14 @@ public class MainActivity extends AppCompatActivity {
                                 progressDialog.dismiss();
                             }
                         });
+            }
+        });
+
+        regis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(intent);
             }
         });
 

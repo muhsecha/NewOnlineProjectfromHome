@@ -92,7 +92,8 @@
                                 android:padding="15dp"
                                 android:layout_gravity="center"
                                 android:text="S\nE\nW\nA\nA\nN"
-                                android:textColor="@color/hitam" />
+                                android:textColor="@color/hitam"
+                                android:textAlignment="center"/>
 
                             <ImageView
                                 android:layout_marginLeft="50dp"
@@ -123,7 +124,7 @@
                         android:foreground="?android:attr/selectableItemBackground">
 
                         <LinearLayout
-                            android:id="@+id/lnrpl"
+                            android:id="@+id/lnrdurasi"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
@@ -133,7 +134,8 @@
                                 android:padding="15dp"
                                 android:layout_gravity="center"
                                 android:text="D\nU\nR\nA\nS\nI"
-                                android:textColor="@color/hitam" />
+                                android:textColor="@color/hitam"
+                                android:textAlignment="center"/>
 
                             <ImageView
                                 android:layout_marginLeft="50dp"

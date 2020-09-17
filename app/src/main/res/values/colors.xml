@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4272f5</color>
-    <color name="colorPrimaryDark">#4842f5</color>
+    <color name="colorPrimary">#D81414</color>
+    <color name="colorPrimaryDark">#FF5E00</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorGreen">#a4f542</color>
+    <color name="colorGreen">#828282</color>
     <color name="hitam">#000000</color>
 </resources>
