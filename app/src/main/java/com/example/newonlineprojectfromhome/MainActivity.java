@@ -66,28 +66,27 @@ public class MainActivity extends AppCompatActivity {
                 String password = pass.getText().toString().trim();
                 progressDialog.setTitle("Logging In...");
                 progressDialog.show();
-                AndroidNetworking.post(baseUrl.url + "login.php")
-                        .addBodyParameter("username", username)
-                        .addBodyParameter("password", password)
+                AndroidNetworking.post("http://192.168.6.201/rentalLaptop/login.php")
+                        .addBodyParameter("email",username)
+                        .addBodyParameter("password",password)
                         .setPriority(Priority.LOW)
                         .build()
                         .getAsJSONObject(new JSONObjectRequestListener() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                Log.d("hasil", "onResponse: ");
                                 try {
                                     JSONObject PAYLOAD = response.getJSONObject("PAYLOAD");
                                     boolean sukses = PAYLOAD.getBoolean("respon");
                                     String roleuser = PAYLOAD.getString("roleuser");
                                     Log.d("PAYLOAD", "onResponse: " + PAYLOAD);
                                     if (sukses && roleuser.equals("admin")) {
-                                        sp.edit().putBoolean("logged",true).apply();
+                                        sp.edit().putString("logged","admin").apply();
                                         Intent intent = new Intent(MainActivity.this, AdminDashboard.class);
                                         startActivity(intent);
                                         finish();
                                         progressDialog.dismiss();
                                     } else if (sukses && roleuser.equals("customer")){
-                                        sp.edit().putBoolean("logged",true).apply();
+                                        sp.edit().putString("logged","customer").apply();
                                         Intent intent = new Intent(MainActivity.this, CostumerDasboard.class);
                                         startActivity(intent);
                                         finish();
@@ -103,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onError(ANError anError) {
-                                progressDialog.dismiss();
+                                Log.d("eror", "onError: "+anError.getErrorDetail());
                             }
                         });
             }

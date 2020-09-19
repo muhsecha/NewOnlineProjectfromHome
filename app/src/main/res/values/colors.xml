@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#D81414</color>
-    <color name="colorPrimaryDark">#FF5E00</color>
+    <color name="colorPrimary">#D62B2B</color>
+    <color name="colorPrimaryDark">#F03150</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorGreen">#828282</color>
     <color name="hitam">#000000</color>

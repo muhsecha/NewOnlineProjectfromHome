@@ -5,44 +5,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminDashboard">
+    tools:context=".AdminDashboard"
+    android:background="@color/colorWhite">
 
 
-    <ImageView
-        android:id="@+id/ivgambar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/climage"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@mipmap/background"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvSelamat"
-        android:text="Selamat Pagi"
-        android:textColor="@color/colorWhite"
-        android:textSize="15sp"
-        android:layout_marginTop="85dp"
-        android:paddingLeft="25dp"
-        app:layout_constraintStart_toStartOf="@id/ivgambar"
-        app:layout_constraintTop_toTopOf="@id/ivgambar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/tvUser"
-        android:text="ADMIN"
-        android:textColor="@color/colorWhite"
-        android:textSize="25sp"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="25dp"
-        app:layout_constraintStart_toStartOf="@id/ivgambar"
-        app:layout_constraintTop_toBottomOf="@id/tvSelamat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/ivgambar"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@mipmap/background"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+
+        <ImageView
+            android:id="@+id/ivCloud"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="150dp"
+            android:src="@mipmap/cloud"/>
+
+        <TextView
+            android:id="@+id/tvSelamat"
+            android:text="SELAMAT PAGI"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:layout_marginTop="85dp"
+            android:paddingLeft="25dp"
+            app:layout_constraintStart_toStartOf="@id/ivgambar"
+            app:layout_constraintTop_toTopOf="@id/ivgambar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tvUser"
+            android:text="ADMIN"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="25dp"
+            app:layout_constraintStart_toStartOf="@id/ivgambar"
+            app:layout_constraintTop_toBottomOf="@id/tvSelamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivgambar"
+        app:layout_constraintTop_toBottomOf="@id/climage"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_height="0dp">
@@ -63,7 +83,7 @@
                     android:layout_marginTop="60dp"
                     android:text="LIHAT DATA COSTOMER"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/hitam" />
                 <LinearLayout
                     android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
@@ -73,25 +93,27 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/rent"
+                        android:id="@+id/cdrent"
                         android:layout_width="250dp"
                         android:layout_height="150dp"
                         android:layout_margin="5dp"
                         android:clickable="true"
-                        app:cardCornerRadius="5dp"
-                        android:foreground="?android:attr/selectableItemBackground">
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="3dp"
+                        app:cardUseCompatPadding="true">
 
                         <LinearLayout
-                            android:id="@+id/lnrent"
+                            android:id="@+id/lndata"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:background="@drawable/bg_admin">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="15dp"
                                 android:layout_gravity="center"
-                                android:text="S\nE\nW\nA\nA\nN"
+                                android:text="D\nA\nT\nA"
                                 android:textColor="@color/hitam"
                                 android:textAlignment="center"/>
 
@@ -106,7 +128,6 @@
 
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,25 +136,27 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/rpl"
+                        android:id="@+id/cdsignout"
                         android:layout_width="250dp"
                         android:layout_height="150dp"
                         android:layout_margin="5dp"
                         android:clickable="true"
-                        app:cardCornerRadius="5dp"
-                        android:foreground="?android:attr/selectableItemBackground">
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="3dp"
+                        app:cardUseCompatPadding="true">
 
                         <LinearLayout
-                            android:id="@+id/lnrdurasi"
+                            android:id="@+id/lnsignout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:background="@drawable/bg_admin">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="15dp"
                                 android:layout_gravity="center"
-                                android:text="D\nU\nR\nA\nS\nI"
+                                android:text="L\nO\nG\nO\nU\nT"
                                 android:textColor="@color/hitam"
                                 android:textAlignment="center"/>
 
@@ -142,7 +165,7 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_gravity="center"
-                                android:src="@mipmap/duration" />
+                                android:src="@mipmap/logout" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
